@@ -1,0 +1,25 @@
+/* REFERENCES:
+http://www.techirsh.com/2015/05/creating-attractive-rounded-button-with.html
+color codes: https://htmlcolorcodes.com/ */
+.imageClass {
+    position: relative;
+    text-align: center;
+    color: #0E2658;
+}
+.textCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: serif;
+    font-style: italic;
+    font-weight: bolder;
+    transform: translate(-50%, -50%);
+}
+.btn-icons {
+      padding: 8px;
+}
+.icon-btn {
+    padding: 1px 15px 15px 15px;
+    border-radius:50px;
+    margin-right:4px;
+}
