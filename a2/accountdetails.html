@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Account</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style1.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="js/charts.js"></script>
+  
+</head>
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.png" class="logo" alt="brand">
+    </a>
+    <div class="toggle">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseContents" aria-controls="collapseContents" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+
+    <div class="collapse navbar-collapse navbar-toggleable-xs " id="collapseContents">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+       <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Add Expense</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Set Budget limit</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Split Expense</a>
+      </li>
+    </ul>
+    <div class="nav-item navbar px-2">
+      
+      <button type="button" class="btn btn-outline-success" onclick="location.href='index.html';">Logout</button>   
+    </div>
+  </div>  
+</nav>    
+     
+  <!-- Application details-Account details -->
+   <div class="container">
+    <h3><b>Account Details</b></h3>
+    
+    <div class ="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        
+        <h5>Your Budget Summary for the month</h5>
+        <p>Budget limit for the month is $1000</p>
+        <p>Budget amount remaining is $150</p>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+      </div> 
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+      </div> 
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#budget">More Details</button>
+      </div>
+    </div>
+
+    <div class ="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <!-- Google API implementation of pie chart -->
+        <div id="dashboard_div">
+            <div id="filter_div"></div>
+            <div id="chart_div"></div>
+        </div>
+      </div>  
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <!-- Google API implementation of line graph -->
+        <div id="curve_chart" style="width: 400px; height: 200px"></div> 
+      </div> 
+    </div>   
+        
+      <div id="budget" class="collapse">
+        <div class="row"> 
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <p>Your current expense $850</p>
+          
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <p>Check out your expenses in each category!</p>
+            
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <p>Last month expense on this day $950</p>
+          
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <p>Check out your expenses in each category!</p>
+                    
+          </div>
+        </div>
+      </div>
+    
+    <div class ="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">    
+        <h5>Your Split Summary for the month</h5>
+        <p>You owe $150</p>
+        <p>You are owed $75</p>
+       </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+      </div> 
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+      </div>  
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#split">More Details</button>
+      </div>
+    </div>
+    <div class ="row">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      </div> 
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <!-- Google API implementation of bar graph -->
+         <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+      </div> 
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      </div> 
+    </div>   
+    <div id="split" class="collapse">     
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <p>Harika   You owe $50</p>
+          <p>Sandeep  You owe $50</p> 
+          <p>Raghav   You owe $50</p>   
+        </div>
+         
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <p>Harika   Owes you $25</p>
+          <p>Sandeep  Owes you $25</p> 
+          <p>Raghav   Owes you $25</p>   
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
