@@ -76,10 +76,3 @@ include "Includes/Header.php";
 
 
     </html>
-<?php
-/**
- * Created by PhpStorm.
- * User: Sowmya Umesh
- * Date: 6/20/2018
- * Time: 1:06 PM
- */
