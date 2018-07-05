@@ -1,54 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BUDGETit</title>
-    <?php include "head.php" ;?>
-</head>
-<body>
-<?php include "navbar.php";?>
+<?php
+include "Includes/Header.php";
+?>
 
-<div class="container-fluid">
-
-    <div class="jumbotron">
-        <h1 class="display-4">Hello</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in odio tristique, vulputate eros ac, lacinia dolor. Suspendisse aliquet, enim vel aliquam scelerisque, nisl nunc euismod velit, in aliquam lectus dui vitae purus. Suspendisse pulvinar iaculis ligula quis gravida. Etiam tincidunt libero neque, eget tempus turpis interdum et. Donec at vestibulum lectus. Nulla lobortis turpis eget leo ullamcorper ornare. Nulla id eros libero. Donec gravida mi vel sem mollis, sed placerat metus egestas. Maecenas ornare nibh et tincidunt placerat.</p>
-        <hr class="my-4">
-        <a class="btn btn-primary btn-lg" href="#" role="button">More</a>
+    <!--reference: https://getbootstrap.com/docs/4.0/layout/overview/-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="Image/bud.jpg" alt="First slide" width="200"
+                     height="400">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="Image/splitimg.jpg" alt="Second slide" width="200"
+                     height="400">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="Image/tracking.jpg" alt="Third slide" width="200"
+                     height="400">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <div class="bg">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body border add-expense">
+                        <h5 class="card-title">Setting up our Budget</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-outline-success color">Add Budget</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body border add-expense">
+                        <h5 class="card-title">Tracking our Expense</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href=detailspage.php class="btn btn-outline-success color">Account Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body border add-expense">
+                        <h5 class="card-title">Spliting Bills</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href=addexpensepage.php class="btn btn-outline-success color">Add Expense</a>
+                    </div>
                 </div>
             </div>
 
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
 
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
 
-        </div>
+
+        <button type="button" class="btn btn-outline-success color foot" >
+            About Us
+        </button>
+
     </div>
-</div>
-<?php include "footer.php";?>
+    </body>
 
-</body>
-</html>
+
+    </html>
