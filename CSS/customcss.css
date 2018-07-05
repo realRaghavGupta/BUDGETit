@@ -1,0 +1,48 @@
+
+
+.big-banner{
+    background-image: url('../Image/bgassign2.jpg');
+}
+
+.border{
+    border-color: darkmagenta;
+}
+.bg{
+    background-color: #FFF6A6;
+}
+.add-expense{
+
+    background:#E8963D ;
+}
+.border{
+    border-color: aqua;
+    border-style: solid;
+}
+
+.topbar{
+
+    background: #e8dfff;
+
+}
+.bgcolor{
+    background-color: aqua;
+}
+.color{
+    color: darkmagenta;
+    border-color: darkmagenta;
+
+}
+.btn-outline-success{
+    color: darkmagenta;
+    background-color: #e8dfff;
+}
+.btn-outline-success:hover{
+    background-color: darkmagenta;
+
+}
+.btn-outline-success:active{
+    background:darkmagenta;
+}
+
+
+
