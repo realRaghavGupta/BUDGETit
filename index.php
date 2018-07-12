@@ -4,10 +4,12 @@
     <title>BUDGETit</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="css/style1.css">
-    <!--   Bootstrap css file throws error on Validation -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./addexpense.css"/>
+    <link rel="stylesheet" href="css/style1.css">
+
+    <!--   Bootstrap css file throws error on Validation -->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/formValidate.js"></script>
 
@@ -15,8 +17,8 @@
 <body>
 
 <!-- Nav Bar -->
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="index.php">
         <!-- Brand Logo created using Photoshop -->
         <img src="images/logo.png" class="logo" alt="brand">
     </a>
@@ -30,32 +32,38 @@
     <div class="collapse navbar-collapse navbar-toggleable-xs " id="collapseContents">
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+<!--            <li class="nav-item active">-->
+<!--                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>-->
+<!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
+            </li> <li class="nav-item">
+                <a class="nav-link" href="viewProfile.php">View Profile</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Services
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#services">Add Expense</a>
-                    <a class="dropdown-item" href="#services">Set Budget Limit</a>
-                    <a class="dropdown-item" href="#services">Split Expense</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#services">Others</a>
+                    <a class="dropdown-item" href="newaddexpense.php">Add Expense</a>
+                    <a class="dropdown-item" href="setbudget.php">Set Budget Limit</a>
+                    <a class="dropdown-item" href="splitExpense.php">Split Expense</a>
+                    <a class="dropdown-item" href="accountDetails.php">Account Details</a>
+<!--                    <div class="dropdown-divider"></div>-->
+<!--                    <a class="dropdown-item" href="#services">Others</a>-->
                 </div>
             </li>
         </ul>
         <div class="nav-item navbar px-2">
-            <button class="btn btn-outline-success" data-toggle="modal" data-target="#login-modal">Login</button>
+            <button class="btn btn-outline-cus" data-toggle="modal" data-target="#login-modal">Login</button>
+        </div>
+        <div class="nav-item navbar px-2">
+            <button class="btn btn-outline-cus" onclick="window.location.href='signup.php'">SignUp</button>
         </div>
     </div>
 </nav>
 
-
+<div class="container-fluid" >
 <!-- Modal -->
 
 <div id="login-modal" class="modal" tabindex="-1" role="dialog">
@@ -74,6 +82,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -204,7 +213,7 @@
 
 </div>
 
-
+</div>
 <!-- Footer -->
 <footer class="footer bg-success pt-4 mt-4">
 
@@ -220,13 +229,13 @@
                 <h5 class="text-uppercase"><b>Services</b></h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!" class="text-dark">Add Expense</a>
+                        <a href="newaddexpense.php" class="text-dark">Add Expense</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-dark">Set Budget</a>
+                        <a href="setbudget.php" class="text-dark">Set Budget</a>
                     </li>
                     <li>
-                        <a href="#!" class="text-dark">Split Expense</a>
+                        <a href="splitExpense.php" class="text-dark">Split Expense</a>
                     </li>
                 </ul>
             </div>

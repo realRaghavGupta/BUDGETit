@@ -1,7 +1,6 @@
 
 
 
-
 <html xmlns:padding="http://www.w3.org/1999/xhtml">
 <head>
     <!-- REFERENCES:
@@ -70,7 +69,6 @@
     </div>
 </nav>
 
-
 <!--<div id="header"></div><br/>-->
 <div class="container-fluid">
     <div class="card bg-dark text-white">
@@ -78,40 +76,48 @@
         <div class="card-img-overlay">
             <div class="container-fluid" align="center" >
                 <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
-                    <h4><b> Set Budget</b></h4>
+                    <h4><b> Split Expense</b></h4>
                     <div class="card-body" style="max-width: 100%;"  padding:10px; align="left">
-                        <form>
-                            <div class="form-group">
-                                <label for="Category">Category</label>
+                        <form data-toggle="validator" role="form">
 
-                                <select class="custom-select" id="category" required>
-
-                                    <option value="entertainment">Entertainment</option>
-                                    <option value="foodanddrink">Food and drink</option>
-                                    <option value="home">Home</option>
-                                    <option value="life">Life</option>
-                                    <option value="transportation">Transportation</option>
-                                    <option value="uncategorized">Uncategorized</option>
-                                    <option value="utilities">Utilities</option>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>select a category</option>
+                                    <option value="1">Food</option>
+                                    <option value="2">Groceries</option>
+                                    <option value="3">WIFI</option>
+                                    <option value="4">Electricity</option>
+                                    <option value="5">Rent</option>
+                                    <option value="6">General</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="Amount">Amount</label>
-                                <input type="number" class="form-control" id="amount" placeholder="Amount" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="Month">Month</label>
-                                <input type="month" class="form-control" id="month" placeholder="Month" required>
-                            </div>
-                            <!-- Button (Double) -->
-                            <div class="form-group">
-                                <div class="col-md-8">
-                                    <button id="submit" name="submit" class="btn btn-primary" value="1">Set Budget</button>
-                                    <a id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+                                <label class="control-label col-xs-3" for="Amount">Amount</label>
+                                <div class="col-xs-9">
+                                    <input type="number" class="form-control" name="amount" id="amount" placeholder="Enter Amount">
+                                </div>
+
+
+                                <label class="control-label col-xs-3" for="inputEmail">Email IDs</label>
+                                <div class="col-xs-9">
+                                    <input type="email" class="form-control"  name="inputEmail" id="inputEmail" placeholder="Email IDs">
                                 </div>
                             </div>
-
-                        </form>
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-primary" onclick="window.location.href='./index.html'" style="background-color:#0E2658;"> Cancel </button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary" onclick="return myFunction()" style="background-color:#0E2658;"> Add </button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -143,3 +149,12 @@
 </html>
 
 
+
+
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Sowmya Umesh
+ * Date: 7/4/2018
+ * Time: 2:26 PM
+ */
