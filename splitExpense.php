@@ -1,6 +1,4 @@
 
-
-
 <html xmlns:padding="http://www.w3.org/1999/xhtml">
 <head>
     <!-- REFERENCES:
@@ -68,7 +66,20 @@
         </div>
     </div>
 </nav>
+<?php
 
+require  './Includes/splitExpenseOp.php';
+$dbop = new splitOperation();
+if (isset($_POST['Add'])) {
+
+	$addSplit = $dbop->insertSplitDetails($_POST['category'],$_POST['amount'],$_POST['inputEmail']);
+	if($addSplit)
+	{
+				echo "<br>";
+				echo 'Expense added successfully';
+	}
+}
+?>
 <!--<div id="header"></div><br/>-->
 <div class="container-fluid">
     <div class="card bg-dark text-white">
@@ -78,20 +89,24 @@
                 <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
                     <h4><b> Split Expense</b></h4>
                     <div class="card-body" style="max-width: 100%;"  padding:10px; align="left">
-                        <form data-toggle="validator" role="form">
-
+                        <form data-toggle="validator" role="form" action="splitExpense.php" method="post">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">Category</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>select a category</option>
-                                    <option value="1">Food</option>
-                                    <option value="2">Groceries</option>
-                                    <option value="3">WIFI</option>
-                                    <option value="4">Electricity</option>
-                                    <option value="5">Rent</option>
-                                    <option value="6">General</option>
+                                <select class="custom-select" id="inputGroupSelect01" name="category">;
+                                  <?php
+                                    require_once('./Includes/connection.php');
+                                    $con = new DatabaseConnection();
+                                    $dbcon = $con->connect();
+                                    $stmt = $dbcon->prepare("select * from category_table");
+                                    $stmt->execute();
+                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                      echo '<option selected>select a category</option>';
+                                    foreach($rows as $row){
+
+                                        echo '<option value="'.$row['category_id'].'">'.$row['name'].'</option>';
+                                  } ?>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -99,8 +114,6 @@
                                 <div class="col-xs-9">
                                     <input type="number" class="form-control" name="amount" id="amount" placeholder="Enter Amount">
                                 </div>
-
-
                                 <label class="control-label col-xs-3" for="inputEmail">Email IDs</label>
                                 <div class="col-xs-9">
                                     <input type="email" class="form-control"  name="inputEmail" id="inputEmail" placeholder="Email IDs">
@@ -112,7 +125,7 @@
                                         <button type="button" class="btn btn-primary" onclick="window.location.href='./index.html'" style="background-color:#0E2658;"> Cancel </button>
                                     </div>
                                     <div class="col">
-                                        <button type="submit" class="btn btn-primary" onclick="return myFunction()" style="background-color:#0E2658;"> Add </button>
+                                        <button type="submit" class="btn btn-primary" name="Add" onclick="return myFunction()" style="background-color:#0E2658;"> Add </button>
                                     </div>
                                 </div>
                             </div>
