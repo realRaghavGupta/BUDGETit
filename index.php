@@ -196,12 +196,6 @@
 
 </footer>
 
-
-
-<!-- Use downloaded version of Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-
-
 <!-- Modal validation using jquery -->
 <script>
     $(function() {
