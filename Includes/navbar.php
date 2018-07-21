@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <!-- Brand Logo created using Photoshop -->
-        <img src="images/logo.png" class="logo" alt="brand">
+        <img src="includes/assets/images/logo.png" class="logo" alt="brand">
     </a>
     <div class="toggle">
         <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseContents" aria-controls="collapseContents" aria-expanded="false" aria-label="Toggle navigation">

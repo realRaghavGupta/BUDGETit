@@ -15,4 +15,4 @@
 
 
 <!--reference: https://getbootstrap.com/docs/4.0/layout/overview/-->
-    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" href="includes/assets/favicon.ico">

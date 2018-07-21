@@ -87,13 +87,13 @@
 <div id="carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="images/carousel1.jpg" alt="slide1">
+            <img class="d-block w-100" src="includes/assets/images/carousel1.jpg" alt="slide1">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/carousel2.jpg" alt="slide2">
+            <img class="d-block w-100" src="includes/assets/images/carousel2.jpg" alt="slide2">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="images/carousel3.jpg" alt="slide3">
+            <img class="d-block w-100" src="includes/assets/images/carousel3.jpg" alt="slide3">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carousel" data-slide="prev">
@@ -128,7 +128,7 @@
     <h4><b>Our Services</b></h4>
     <div class="card-deck">
         <div class="card">
-            <img class="card-img-top" src="images/service1.jpg" alt="Add Expense">
+            <img class="card-img-top" src="includes/assets/images/service1.jpg" alt="Add Expense">
             <div class="card-body">
                 <h5 class="card-title">ADD EXPENSES</h5>
                 <p class="card-text">The Add Expense feature in our application helps the user to record their expenses and manage them categorically by assigning a category to each new expense that is added.</p>
@@ -138,7 +138,7 @@
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="images/service2.jpg" alt="Set Budget Limit">
+            <img class="card-img-top" src="includes/assets/images/service2.jpg" alt="Set Budget Limit">
             <div class="card-body">
                 <h5 class="card-title">SET BUDGET LIMIT</h5>
                 <p class="card-text">This functionality allows users to set a budget limit on their account for every month. This would help the user to check their expenditure with the limit they had set for the month and control their expenses.</p>
@@ -148,7 +148,7 @@
             </div>
         </div>
         <div class="card">
-            <img class="card-img-top" src="images/service3.jpg" alt="Split Expense">
+            <img class="card-img-top" src="includes/assets/images/service3.jpg" alt="Split Expense">
             <div class="card-body">
                 <h5 class="card-title">SPLIT EXPENSE</h5>
                 <p class="card-text">The Split Expense functionality provides the users with a smart method to split your expenses with your friends and manage costs efficiently.</p>
