@@ -6,6 +6,7 @@
 SlideShow: https://www.w3schools.com/w3css/w3css_slideshow.asp
 Header: https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages
 -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./bootstrap-4.1.1-dist/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="./bootstrap-4.1.1-dist/css/bootstrap.min.css"/>
