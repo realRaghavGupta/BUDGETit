@@ -4,80 +4,12 @@
     <title>BUDGETit</title>
     <?php include "includes/header.php" ?>
 
-<<<<<<< HEAD
 
-=======
-<html xmlns:padding="http://www.w3.org/1999/xhtml">
-<head>
-    <!-- REFERENCES:
-    BootStrap : https://getbootstrap.com/docs/4.1
-    Image: https://goo.gl/images/iK8YWf
-    javascript: https://www.w3schools.com/jsref/prop_email_multiple.asp
-    Header: https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages
-  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./bootstrap-4.1.1-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./bootstrap-4.1.1-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./addexpense.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
-    <script src="bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
-    <title> Split Expense Page </title>
->>>>>>> 4d54bee280e3a7ef2ffe3e296a674a3c9e22ffef
 </head>
 <body>
 
 <!-- Nav Bar -->
-<<<<<<< HEAD
 <?php include "includes/navbar.php" ?>
-=======
-<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-    <a class="navbar-brand" href="index.php">
-        <!-- Brand Logo created using Photoshop -->
-        <img src="images/logo.png" class="logo" alt="brand">
-    </a>
-    <div class="toggle">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseContents" aria-controls="collapseContents" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-
-
-    <div class="collapse navbar-collapse navbar-toggleable-xs " id="collapseContents">
-
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-            <!--            <li class="nav-item active">-->
-            <!--                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>-->
-            <!--            </li>-->
-            <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-            </li> <li class="nav-item">
-                <a class="nav-link" href="viewProfile.php">View Profile</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Services
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="newaddexpense.php">Add Expense</a>
-                    <a class="dropdown-item" href="setbudget.php">Set Budget Limit</a>
-                    <a class="dropdown-item" href="splitExpense.php">Split Expense</a>
-                    <a class="dropdown-item" href="accountDetails.php">Account Details</a>
-                    <!--                    <div class="dropdown-divider"></div>-->
-                    <!--                    <a class="dropdown-item" href="#services">Others</a>-->
-                </div>
-            </li>
-        </ul>
-        <div class="nav-item navbar px-2">
-            <button class="btn btn-outline-cus" data-toggle="modal" data-target="#login-modal">Login</button>
-        </div>
-        <div class="nav-item navbar px-2">
-            <button class="btn btn-outline-cus" onclick="window.location.href='signup.php'">SignUp</button>
-        </div>
-    </div>
-</nav>
 <?php
 
 require  './Includes/splitExpenseOp.php';
@@ -92,7 +24,7 @@ if (isset($_POST['Add'])) {
 	}
 }
 ?>
->>>>>>> 4d54bee280e3a7ef2ffe3e296a674a3c9e22ffef
+
 <!--<div id="header"></div><br/>-->
 <div class="container-fluid">
     <div class="card bg-dark text-white">
@@ -173,14 +105,3 @@ if (isset($_POST['Add'])) {
 </script>
 </body>
 </html>
-
-
-
-
-<?php
-/**
- * Created by PhpStorm.
- * User: Sowmya Umesh
- * Date: 7/4/2018
- * Time: 2:26 PM
- */
