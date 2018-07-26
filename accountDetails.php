@@ -22,19 +22,35 @@ if(empty($_SESSION['username']))
         //fetch data from database and populate the card
         $curr_month=$_POST['month'];
         $uname=$_SESSION['username'];
-        echo $uname;
-         require_once('Includes/connection.php');
+        require_once('Includes/connection.php');
+        require_once('Includes/splitExpenseOp.php');
                                     $conn = new DatabaseConnection;
+                                    $op=new splitOperation;
                                     $dbcon = $conn->connect();
-                                    $stmt = $dbcon->prepare("select sum(amount) as newamt from budget_table where month='$curr_month'");
-                                    var_dump($curr_month);
+                                    $uid=$op->getUser_id($uname,$dbcon);
+                                    //echo "userid".$uid;
+                                    $stmt = $dbcon->prepare("select sum(amount) as newamt from budget_table where user_id='$uid' and month='$curr_month'");
+                                    $stmt1 = $dbcon->prepare("select sum(amount) as totexp from expense_table where user_id='$uid' and date='$curr_month'");
+                                    //var_dump($curr_month);
                                     $stmt->execute();
+                                    $stmt1->execute();
                                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
                                       
                                      foreach($rows as $row)
                                      {
                                         $amt=$row['newamt'];     
                                     }
+                                    foreach($rows1 as $row1)
+                                     {
+                                        $exp=$row1['totexp'];     
+                                    }
+                                    $balance=$amt-$exp;
+                                    if($balance>0)
+                                        $msg="Expenses for this month is in limit";
+                                    else
+                                        $msg="Expenses for this month has exceeded limit";
+
     }
       ?>
 
@@ -98,10 +114,10 @@ if(empty($_SESSION['username']))
 
                         ?> 
                         <h5 class="card-title">Month : June</h5>
-                        <p class="card-text">Budget Limit: <?php echo $amt; ?></p>
-                        <p class="card-text">Spent Amount: $900</p>
-                        <p class="card-text">Remaining Amount: $100</p>
-                        <p class="card-text" style="color: green;">Budget in Limit</p>
+                        <p class="card-text">Budget Limit: $<?php echo $amt; ?></p>
+                        <p class="card-text">Spent Amount: $<?php echo $exp; ?></p>
+                        <p class="card-text">Remaining Amount: $<?php echo $balance; ?></p>
+                        <p class="card-text" style="color: green;"><?php echo $msg; ?></p>
                     </div>
                 </td>
                 <td>
