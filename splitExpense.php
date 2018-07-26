@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" xmlns:padding="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,7 +19,7 @@ require  './Includes/splitExpenseOp.php';
 $dbop = new splitOperation();
 if (isset($_POST['Add'])) {
 
-	$addSplit = $dbop->insertSplitDetails($_POST['category'],$_POST['amount'],$_POST['inputEmail']);
+	$addSplit = $dbop->insertSplitDetails($_POST['category'],$_POST['amount'],$_POST['inputEmail'],$_SESSION['username']);
 	if($addSplit)
 	{
 				echo "<br>";
