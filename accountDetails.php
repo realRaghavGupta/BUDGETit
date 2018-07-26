@@ -20,7 +20,22 @@ if(empty($_SESSION['username']))
       {
         echo "u are inside selected value";
         //fetch data from database and populate the card
-      }
+        $curr_month=$_POST['month'];
+        $uname=$_SESSION['username'];
+        echo $uname;
+         require_once('Includes/connection.php');
+                                    $conn = new DatabaseConnection;
+                                    $dbcon = $conn->connect();
+                                    $stmt = $dbcon->prepare("select sum(amount) as newamt from budget_table where month='$curr_month'");
+                                    var_dump($curr_month);
+                                    $stmt->execute();
+                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                      
+                                     foreach($rows as $row)
+                                     {
+                                        $amt=$row['newamt'];     
+                                    }
+    }
       ?>
 
 
@@ -64,8 +79,26 @@ if(empty($_SESSION['username']))
             <tr>
                 <td>
                     <div class="card-body">
+                        <?php
+                                    
+                                    // require_once('Includes/connection.php');
+                                    // $conn = new DatabaseConnection;
+                                    // $dbcon = $conn->connect();
+                                    // $stmt = $dbcon->prepare("select sum(amount) as newamt from budget_table where month='$curr_month'");
+                                    // var_dump($curr_month);
+                                    // $stmt->execute();
+                                    // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                      
+                                    //  foreach($rows as $row)
+                                    //  {
+
+                                    //      echo "Total Budget:".$row['newamt']."<br>";
+                                    //  }  
+
+
+                        ?> 
                         <h5 class="card-title">Month : June</h5>
-                        <p class="card-text">Budget Limit: $1000</p>
+                        <p class="card-text">Budget Limit: <?php echo $amt; ?></p>
                         <p class="card-text">Spent Amount: $900</p>
                         <p class="card-text">Remaining Amount: $100</p>
                         <p class="card-text" style="color: green;">Budget in Limit</p>
