@@ -10,15 +10,15 @@ require_once('Includes/splitExpenseOp.php');
 if(isset($_POST['submit']))
 {
   $uname=$_SESSION['username'];
-  $conn = new DatabaseConnection;
-  $op=new splitOperation;
+  $conn = new DatabaseConnection();
+  $op=new splitOperation();
   $dbcon = $conn->connect();
   $uid=$op->getUser_id($uname,$dbcon);
 
   $category = $_POST['category'];
   $month = $_POST['month'];
   $amount = $_POST['amount'];
-  
+  echo $uid;
   $obj = new AddBudget;
   $obj->newbudget($category,$month,$uid,$amount);
 
@@ -119,8 +119,8 @@ if(isset($_POST['submit']))
                                     // require_once('addbudget.php');
                                     // $con = new AddBudget;
                                     // $dbcon = $con->connection();
-                                    $conn = new DatabaseConnection;
-                                    $op=new splitOperation;
+                                    $conn = new DatabaseConnection();
+                                    $op=new splitOperation();
                                     $dbcon = $conn->connect();
                                     $stmt = $dbcon->prepare("select * from category_table");
                                     $stmt->execute();
