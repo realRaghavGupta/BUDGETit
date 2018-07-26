@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:padding="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,30 +21,96 @@
                 <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
                     <h4><b>Signup</b></h4>
                     <div class="card-body" style="max-width: 100%;"  padding:10px; align="left">
-                        <form>
+                        <form class="form" action="signup.php" method="post">
                             <div class="form-group">
                                 <label for="FirstName">First Name</label>
-                                <input type="text" class="form-control" id="firstname" placeholder="First Name" required/>
+                                <input type="text" name ="firstname" class="form-control" id="firstname" placeholder="First Name" required/>
                             </div>
                             <div class="form-group">
                                 <label for="LastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required pattern="^[a-zA-Z]*|[a-zA-Z]*[ |-][a-zA-Z]*"/>
+                                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" required pattern="^[a-zA-Z]*|[a-zA-Z]*[ |-][a-zA-Z]*"/>
                             </div>
                             <div class="form-group">
                                 <label for="Email">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" required/>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" required/>
                             </div>
                             <div class="form-group">
                                 <label for="Password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password" required/>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required/>
                             </div>
                             <div class="form-group"">
                                 <label for="ConfirmPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" required/>
+                                <input type="password" name="cpassword" class="form-control" id="cpassword" placeholder="Confirm Password" required/>
                             </div>
-                            <button type="submit" class="btn btn-primary">SIGNUP</button>
-                            <button type="button" class="btn btn-primary" onClick="location.href = 'index.php';">BACK TO HOME</button>
+                            <div class="form-group"">
+                            <label for="Phoneno">Phone No.</label>
+                            <input type="tel" class="form-control" name="phoneno" id="phoneno" placeholder="Phone No" required/>
+                            </div>
+                <input name="button" type="submit" id="signup" value="SIGNUP" /> </br>
+<!--                            <button type="submit" class="btn btn-primary">SIGNUP</button>-->
+<!--                            <button type="button" class="btn btn-primary" onClick="location.href = 'index.php';">BACK TO HOME</button>-->
                         </form>
+                    <?php
+include "includes/database.php";
+
+                    if(isset($_POST['button']))
+                    {
+//                        echo '<script type="text/javascript"> alert("signup button clicked")</script>';
+
+                        $firstname= $_POST['firstname'];
+                        $lastname= $_POST['lastname'];
+                        $email= $_POST['email'];
+                        $password= $_POST['password'];
+                        $confirm= $_POST['cpassword'];
+                        $phoneno= $_POST['phoneno'];
+                        $userid = NULL;
+                        if($password==$confirm) {
+
+//                            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+//                            // set the PDO error mode to exception
+//                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $query = $conn->prepare("SELECT * FROM project.user_table WHERE email = :email");
+                            $query->execute(array(':email' => $email));
+                            $query2 = $query->fetch(PDO::FETCH_ASSOC);
+
+
+                            if ($query2==true) {
+                                echo '<script type="text/javascript"> alert("email already registered, try another email")</script>';
+                            } else {
+
+                                try {
+
+                                    $query3 = $conn->prepare("INSERT INTO user_table (user_id,first_name,last_name, email,password, phone_no)
+    VALUES (:userid,:firstname,:lastname, :email,:password, :phoneno)");
+//                $query3->bindParam(':id', $id);
+                                    $query3->bindParam(':userid', $userid);
+                                    $query3->bindParam(':email', $email);
+                                    $query3->bindParam(':password', $password);
+                                    $query3->bindParam(':firstname', $firstname);
+                                    $query3->bindParam(':lastname', $lastname);
+                                    $query3->bindParam(':phoneno', $phoneno);
+
+
+                                    $query3->execute();
+
+
+                                    echo '<script type="text/javascript"> alert("user registered successfully")</script>';
+                                }
+                                catch (PDOException $e) {
+                                    echo "Error: " . $e->getMessage();
+                                    echo '<script type="text/javascript"> alert("error inserting the data!")</script>';
+                                }
+
+                            }
+                        }
+                        else {
+                            echo '<script type="text/javascript"> alert("passwords mismatch!")</script>';
+                        }
+
+
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>
