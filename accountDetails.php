@@ -18,10 +18,47 @@ if(empty($_SESSION['username']))
     <?php
     require  './Includes/accountDetailOp.php';
     require  './Includes/populatechat.php';
+    require_once('Includes/connection.php');
+    require_once('Includes/splitExpenseOp.php');
     $splitop = new AccountDetailsOp();
       $chartP = new ChartPopulate();
       if(isset($_POST['month']))
       {
+        $curr_month=$_POST['month'];
+        $uname=$_SESSION['username'];
+
+                                    $conn = new DatabaseConnection;
+                                    $op=new splitOperation;
+                                    $dbcon = $conn->connect();
+                                    $uid=$op->getUser_id($uname,$dbcon);
+                                    //echo "userid".$uid;
+                                    $stmt = $dbcon->prepare("select sum(amount) as newamt from budget_table where user_id='$uid' and month='$curr_month'");
+                                    $stmt1 = $dbcon->prepare("select sum(amount) as totexp from expense_table where user_id='$uid' and date='$curr_month'");
+                                    //var_dump($curr_month);
+                                    $stmt->execute();
+                                    $stmt1->execute();
+                                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    $rows1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                                     foreach($rows as $row)
+                                     {
+                                        $amt=$row['newamt'];
+                                    }
+                                    foreach($rows1 as $row1)
+                                     {
+                                        $exp=$row1['totexp'];
+                                    }
+                                    $balance=$amt-$exp;
+                                    if($balance>0)
+                                    {
+                                      $balance = "Remaining amount: $".$balance;
+                                        $msg="Expenses for this month is in limit";
+                                    }
+                                    else
+                                    {
+                                        $balance = "Exceeded by: $".abs($balance);
+                                        $msg="Expenses for this month has exceeded limit";
+                                      }
         //echo "u are inside selected value";
         foreach ($monthDetails as $key => $value) {
           // code...
@@ -36,8 +73,11 @@ if(empty($_SESSION['username']))
       $entry = $chartP->populateExpenseChart($_SESSION['username'],$_POST['month']);
         $entryLine= $chartP->populateBudgetChart($_SESSION['username']);
 
-      }
+
+
+    }
       ?>
+
 </head>
 <body>
 
@@ -59,15 +99,28 @@ if(empty($_SESSION['username']))
           } ?>
         </select>
           </div>
-
+        </form>
 <div class="container-fluid" style="background-color:#CCD1D1">
     </br>
     <div class="card bg-light mb-3" style="max-width: 100%">
-        <div class="card-header"><h3><b>Account Details</b></h3></div>
-        <div class="card-body" style=" align: center;">
-             <div class="mySlides" id="piechart" style=" align: center; width: 900px; height: 300px;"></div>
-            <div class="mySlides" id="columnChart"></div>
-            <div class="mySlides" id="curve_chart" "width: 900px; height: 500px"></div>
+      <!--Table and divs that hold the pie charts-->
+<table class="columns">
+  <tr>
+    <td>
+      <div id="curve_chart" style="border: 1px solid #ccc"></div>
+    </td>
+  </tr>
+</table>
+</div>
+<div class="card bg-light mb-3" style="max-width: 100%">
+  <!--Table and divs that hold the pie charts-->
+<table class="columns">
+  <tr>
+      <td><div id="piechart" style="width: 60%; border: 1px solid #ccc"></div></td>
+      <td><div id="columnChart" style="width: 60%; border: 1px solid #ccc"></div></td>
+  </tr>
+</table>
+
     </div>
 </div>
 </br>
@@ -78,11 +131,12 @@ if(empty($_SESSION['username']))
             <tr>
                 <td>
                     <div class="card-body">
-                        <h5 class="card-title">Month : </h5>
-                        <p class="card-text">Budget Limit: $1000</p>
-                        <p class="card-text">Spent Amount: $900</p>
-                        <p class="card-text">Remaining Amount: $100</p>
-                        <p class="card-text" style="color: green;">Budget in Limit</p>
+
+                        <h5 class="card-title">Month : <?php echo $monthName; ?></h5>
+                        <p class="card-text">Budget Limit: $<?php echo $amt; ?></p>
+                        <p class="card-text">Spent Amount: $<?php echo $exp; ?></p>
+                        <p class="card-text"><?php echo $balance; ?></p>
+                        <p class="card-text" style="color: green;"><?php echo $msg; ?></p>
                     </div>
                 </td>
                 <td>
@@ -105,6 +159,7 @@ if(empty($_SESSION['username']))
 </div>
   </form>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!--Worked by Sowmya Umesh (B00788667) -->
 <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
@@ -114,12 +169,13 @@ if(empty($_SESSION['username']))
              <?php echo $entry ?>
         ]);
         var options = {
-            title: 'Account Details per Category for Month JUNE'
+            title: 'Account Details per Category for Month <?php echo $monthName; ?>'
         };
         var piechart = new google.visualization.PieChart(document.getElementById('piechart'));
         piechart.draw(data, options);
     }
 </script>
+<!--Worked by Harika Ponnekanti (B00785817) -->
 <script type="text/javascript">
     google.charts.load('current', {'packages':['bar']});
     google.charts.setOnLoadCallback(drawChart);
@@ -132,9 +188,9 @@ if(empty($_SESSION['username']))
         ]);
 
         var options = {
-            title: "Account Details per Category for Month JUNE",
-            width: 900,
-            height: 300,
+            title: "Account Details per Category for Month <?php echo $monthName; ?>",
+            width: 500,
+            height: 500,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
         };
@@ -142,6 +198,7 @@ if(empty($_SESSION['username']))
         chart.draw(dataC, options);
     }
 </script>
+<!--Worked by Mary Ann (B00783053) -->
 <script type="text/javascript">
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawChart);
@@ -154,28 +211,12 @@ if(empty($_SESSION['username']))
       //  document.write(data);
         var options = {
             title: 'Budget Details for Year 2018',
+            width:1000,
             height: 300
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
         chart.draw(data, google.charts.Line.convertOptions(options));
-    }
-</script>
-
-<script>
-    var slideIndex = 0;
-    carousel();
-
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > x.length) {slideIndex = 1}
-        x[slideIndex-1].style.display = "block";
-        setTimeout(carousel, 3000);
     }
 </script>
 <script>

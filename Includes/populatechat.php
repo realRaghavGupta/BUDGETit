@@ -15,11 +15,7 @@ class ChartPopulate
       $stmt= $dbcon->prepare($query);
       $stmt->execute([$user_id, $month]);
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //  $ExArr = array(['Category', 'Amount Spent ($)']);
       foreach($rows as $row){
-        //  $sCat=$row['name'];
-          //$Stotal=$row['total'];
-          //array_push($ExArr,$sCat,$Stotal);
           $entry .= "['".$row{'name'}."',".$row{'total'}."],";
     }
       return $entry;
@@ -38,11 +34,6 @@ class ChartPopulate
       $detils = new AccountDetailsOp();
       $user_id = $detils->getUser_id($username,$dbcon);
       $query = "select sum(amount) as newamt from budget_table where user_id=? and month=?";
-      //  ['Month', 'Budget Limit ($)', 'Expenses ($)'],
-      //store month => budget value
-      //store month => expense value
-      //if month == 1 $entry= jan budget value expense value
-      //one key array and one value array combine
       $stmt= $dbcon->prepare($query);
       $ExArr = array();
         $ExArr1 = array();
@@ -63,12 +54,8 @@ class ChartPopulate
       }
       }
       $c = array_combine($ExArr,$ExArr1);
-      print_r($c);
+
       $query1 = "select sum(amount) as totEx from expense_table where user_id=? and date=?;";
-      //  ['Month', 'Budget Limit ($)', 'Expenses ($)'],
-      //store month => budget value
-      //store month => expense value
-      //if month == 1 $entry= jan budget value expense value
       $stmt1= $dbcon->prepare($query1);
       $ExArr = array();
       $ExArr1 = array();
@@ -89,7 +76,7 @@ class ChartPopulate
       }
       }
       $d = array_combine($ExArr,$ExArr1);
-      print_r($d);
+    
       foreach($c as $x=>$x_value)
       {
         foreach($d as $x1=>$x_value1)
@@ -156,7 +143,7 @@ class ChartPopulate
           }
         }
       }
-      print_r($entry);
+
       return $entry;
     }
     catch (PDOException $e)

@@ -17,11 +17,11 @@ class AccountDetailsOp{
         exit($e->getMessage());
     }
   }
-  
+
   public function getSplitDetails($month,$username)
   {
     try {
-      require 'connection.php';
+      require_once 'connection.php';
       $con = new DatabaseConnection();
       $dbcon = $con->connect();
       $detils = new AccountDetailsOp();
