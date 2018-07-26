@@ -24,9 +24,9 @@ public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split
   //get Transaction_id from expense table and update here
   $date = date("Y-m-d");
   $month = date("m", strtotime($date));
-  $query = "insert into expense_table (category_id,user_id,amount,date) values (?,?,?,?)";
+  $query = "insert into expense_table (category_id,user_id,amount,date,split) values (?,?,?,?,?)";
   $stmt= $dbcon->prepare($query);
-  $stmt->execute([$category,$user_id,$splitAmount,$month]);
+  $stmt->execute([$category,$user_id,$splitAmount,$month,'yes']);
   $transaction_id = $dbcon->lastInsertId();
    $query = "update split_table set transaction_id = '$transaction_id' where split_id = '$split_id' ";
    $stmt= $dbcon->prepare($query);
