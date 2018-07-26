@@ -3,7 +3,6 @@ session_start();
 if(empty($_SESSION['username']))
 {
     header('Location: index.php');
-
 }
 ?>
 <!DOCTYPE html>
@@ -11,6 +10,18 @@ if(empty($_SESSION['username']))
 <head>
     <title>BUDGETit</title>
     <?php include "includes/header.php" ?>
+  <?php $monthDetails = array("1"=>"January","2"=>"February","3"=>"March",
+                      "4"=>"April","5"=>"May","6"=>"June","7"=>"July",
+                        "8"=>"August","9"=>"September","10"=>"October",
+                        "11"=>"November","12"=>"December");
+    ?>
+    <?php
+      if(isset($_POST['month']))
+      {
+        echo "u are inside selected value";
+        //fetch data from database and populate the card
+      }
+      ?>
 
 
 </head>
@@ -20,6 +31,21 @@ if(empty($_SESSION['username']))
 <?php include "includes/navbar.php" ?>
 
 <!--<div id="header"></div><br/>-->
+<form data-toggle="validator" role="form" action="accountDetails.php" method="post">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Month</label>
+        </div>
+
+        <select class="custom-select" id="inputGroupSelect01" name="month" onchange="this.form.submit()">
+          <?php
+            foreach($monthDetails as $x => $xValue){
+
+                echo '<option value="'.$x.'">'.$xValue.'</option>';
+          } ?>
+        </select>
+          </div>
+        </form>
 <div class="container-fluid" style="background-color:#CCD1D1">
     </br>
     <div class="card bg-light mb-3" style="max-width: 100%">
@@ -56,6 +82,7 @@ if(empty($_SESSION['username']))
     <div class="card bg-light mb-3" style=" max-width: 50%">
         <div class="card-header"><h3><b>Split Details</b></h3></div>
         <div class="card-body">
+
             <h5 class="card-title">Month : June</h5>
             <p class="card-text">You Owe Amount: $50</p>
             <p class="card-text">You are Owed Amount: $60</p>
@@ -172,4 +199,3 @@ if(empty($_SESSION['username']))
 </script>
 </body>
 </html>
-
