@@ -20,6 +20,7 @@ if(empty($_SESSION['username']))
     require  './Includes/populatechat.php';
     require_once('Includes/connection.php');
     require_once('Includes/splitExpenseOp.php');
+    $amt=$exp=$balance=$monthName=$msg=$owedAmount="";
     $splitop = new AccountDetailsOp();
       $chartP = new ChartPopulate();
       if(isset($_POST['month']))
