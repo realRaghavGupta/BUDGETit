@@ -32,8 +32,18 @@
                 </div>
             </li>
         </ul>
-        <div class="nav-item navbar px-2">
+        <?php
+        if(isset($_SESSION['username']))
+        {
+
+        }
+        else
+        {
+            echo ' <div class="nav-item navbar px-2">
             <button class="btn btn-outline-success" data-toggle="modal" data-target="#login-modal">Login or Register</button>
-        </div>
+        </div>';
+        }
+        ?>
+
     </div>
 </nav>
