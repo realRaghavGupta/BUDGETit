@@ -132,6 +132,11 @@ if (empty($_SESSION['username'])) {
                         <p class="card-text">Spent Amount: $<?php echo $exp; ?></p>
                         <p class="card-text"><?php echo $balance; ?></p>
                         <p class="card-text" style="color: green;"><?php echo $msg; ?></p>
+                        <form class="form-inline" method="post" action="generatepdf.php">
+                            <button type="submit" id="pdf" name="generate_pdf" class="btn btn-primary"><i class="fa fa-pdf"" aria-hidden="true"></i>
+                                Generate PDF</button>
+                        </form>
+
                     </div>
                 </td>
                 <td>
