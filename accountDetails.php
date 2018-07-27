@@ -26,9 +26,8 @@ if(empty($_SESSION['username']))
       {
         $curr_month=$_POST['month'];
         $uname=$_SESSION['username'];
-
-                                    $conn = new DatabaseConnection;
-                                    $op=new splitOperation;
+        $conn = new DatabaseConnection;
+        $op=new splitOperation;
                                     $dbcon = $conn->connect();
                                     $uid=$op->getUser_id($uname,$dbcon);
                                     //echo "userid".$uid;
@@ -80,7 +79,6 @@ if(empty($_SESSION['username']))
 
 </head>
 <body>
-
 <!-- Nav Bar -->
 <?php include "includes/navbar.php" ?>
 
