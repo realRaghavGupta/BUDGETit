@@ -1,9 +1,9 @@
+<!-- Code by Sandeep Kaur B00786324 -->
 <?php
 session_start();
-//if(empty($_SESSION['username']))
-//{
-//    header('Location: index.php');
-//}
+if (empty($_SESSION['username'])) {
+    header('Location: index.php');
+}
 include "includes/database.php";
 if (isset($_POST['button'])) {
     $email = $_POST['email'];
@@ -15,18 +15,21 @@ if (isset($_POST['button'])) {
 //$query->execute(array(':email' => $email));
 //$query2 = $query->fetch(PDO::FETCH_ASSOC);
 
-    $query = $conn->prepare("SELECT password FROM user_table WHERE email=:email");
-    $query->execute(array(':email' => $email));
+    $query = $conn->prepare("SELECT * FROM user_table WHERE email=:email  AND password= :password");
+    $query->execute(array(':email' => $email, 'password' => $oldPassword));
     $query2 = $query->fetch(PDO::FETCH_ASSOC);
 
-
-    if (!$query) {
-        echo '<script type="text/javascript"> alert("The email you entered does not exist!")</script>';
-    } else if ($oldPassword != $conn->prepare($query, 0)) {
+    if ($query2 != true) {
         echo '<script type="text/javascript"> alert("you entered an incorrect password!")</script>';
-    }
-    if ($newPassword == $confirmPassword)
+    } else if ($newPassword == $confirmPassword)
         $query1 = $conn->prepare("UPDATE user_table SET password='$newPassword' where email=:email");
+
+    $query1->bindParam(':email', $email);
+
+    $query1->execute();
+
+
+//        echo 'inside pasword';
     $query1->execute();
     if ($query) {
         echo '<script type="text/javascript"> alert("you have successfully changed your password!")</script>';
@@ -47,6 +50,7 @@ if (isset($_POST['button'])) {
 
 <!-- Nav Bar -->
 <?php include "includes/navbar.php" ?>
+<!-- Code by Sowmya Umesh B00788667 -->
 <?php
 require_once('./includes/connection.php');
 require './includes/addExpenseOp.php';
@@ -77,7 +81,6 @@ foreach ($rows as $row) {
             <table>
                 <tr>
                     <td>
-                        <!-- Code by Sowmya Umesh B00788667 -->
                         <p style="font-family: serif; font-size: 1em;" class="card-text"> First
                             Name: <?php echo $firstname; ?></p>
 
