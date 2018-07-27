@@ -48,7 +48,7 @@
         if (isset($_SESSION['username'])) {
             echo '
  <form action=logout.php>
- <input type="button" class="btn btn-outline-success" >
+ 
             <button class="btn btn-outline-success" >Logout</button>
         </form></div>';
 
