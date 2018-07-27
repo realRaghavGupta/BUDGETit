@@ -80,7 +80,7 @@ if(empty($_SESSION['username']))
                                                 <button type="button" class="btn btn-primary" onclick="window.location.href='./splitExpense.php'" style="background-color:#0E2658;"> Split </button>
                                             </div>
                                             <div class="col">
-                                                <button type="button" class="btn btn-primary" onclick="window.location.href='./index.html'" style="background-color:#0E2658;"> Cancel </button>
+                                                <button type="button" class="btn btn-primary" onclick="window.location.href='./index.php'" style="background-color:#0E2658;"> Cancel </button>
                                             </div>
                                             <div class="col">
                                                 <button type="submit" class="btn btn-primary" name="Add" onclick="return myFunction()" style="background-color:#0E2658;"> Add </button>

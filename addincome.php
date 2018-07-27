@@ -55,7 +55,7 @@ echo $sss;
                             <div class="form-group">
                                 <div class="form-row">
                                     <div class="col">
-                                        <button type="button" class="btn btn-primary" onclick="window.location.href='./index.html'" style="background-color:#0E2658;"> Cancel </button>
+                                        <button type="button" class="btn btn-primary" onclick="window.location.href='./index.php'" style="background-color:#0E2658;"> Cancel </button>
                                     </div>
                                     <div class="col">
                                         <input name="button" type="submit" id="signup" class="btn btn-primary" onclick="return myFunction()" value="Add" /></br>
