@@ -15,6 +15,7 @@ class ChartPopulate
       $stmt= $dbcon->prepare($query);
       $stmt->execute([$user_id, $month]);
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $entry="";
       foreach($rows as $row){
           $entry .= "['".$row{'name'}."',".$row{'total'}."],";
     }
@@ -76,7 +77,7 @@ class ChartPopulate
       }
       }
       $d = array_combine($ExArr,$ExArr1);
-    
+        $entry="";
       foreach($c as $x=>$x_value)
       {
         foreach($d as $x1=>$x_value1)

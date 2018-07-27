@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(empty($_SESSION['username']))
+{
+    header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,31 +22,49 @@
   <div role="main" class="container-fluid" style="max-width:100%;" align="center">
 
   <div class="card" style="width: 50%;" align="center">
-<img src="./images/splitBg.jpg" class="w3-circle" alt="Alps" style="max-width:40%; max-height:40%;">
+<img src="./Includes/assets/images/Profileicon.png" class="w3-circle" alt="Alps" style="max-width:40%; max-height:40%;">
   <div class="card-body">
     <h4 class="card-title" style="font-family: serif;"><b> Profile Details </b></h4>
     <table>
       <tr>
         <td>
-          <p style="font-family: serif; font-size: 1em;" class="card-text"> First Name: XXXXXXXXX </p>
+            <!-- Code by Sowmya Umesh B00788667 -->
+            <?php
+            require_once('./Includes/connection.php');
+            require  './Includes/addExpenseOp.php';
+            $con = new DatabaseConnection();
+            $dbcon = $con->connect();
+
+            $db = new addExpenseOp();
+            $user_id=$db->getUser_id($_SESSION['username'],$dbcon);
+            $stmt = $dbcon->prepare("select first_name, last_name, email from user_table where user_id=$user_id");
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach($rows as $row){
+
+
+            ?>
+
+          <p style="font-family: serif; font-size: 1em;" class="card-text"> First Name: <?php echo $row["first_name"]; ?></p>
             </br>
         </td>
       </tr>
       <tr>
         <td>
-          <p style="font-family: serif; font-size: 1em;" class="card-text"> Last Name: XXXXXXXXXXX</p>
+          <p style="font-family: serif; font-size: 1em;" class="card-text"> Last Name: <?php echo $row["last_name"]; ?></p>
           </br>
         </td>
       </tr>
     </br>
       <tr>
         <td>
-          <p style="font-family: serif; font-size: 1em;" class="card-text">  Email ID: XXXXXXXX@XX.com </p>
+          <p style="font-family: serif; font-size: 1em;" class="card-text">  Email ID: <?php echo $row["email"]; ?></p>
         </br>
         </td>
       </tr>
     </br>
     </table>
+      <?php } ?>
     <button type="button" style="font-family: serif; font-size: 1.2em;" id="mybutton" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Change Password</button>
 
   </br>

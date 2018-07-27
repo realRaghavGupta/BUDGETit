@@ -24,16 +24,26 @@
                     Services
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#services">Add Expense</a>
-                    <a class="dropdown-item" href="#services">Set Budget Limit</a>
-                    <a class="dropdown-item" href="#services">Split Expense</a>
+                    <a class="dropdown-item" href="newaddexpense.php">Add Expense</a>
+                    <a class="dropdown-item" href="setBudget.php">Set Budget Limit</a>
+                    <a class="dropdown-item" href="splitExpense.php">Split Expense</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#services">Others</a>
                 </div>
             </li>
         </ul>
-        <div class="nav-item navbar px-2">
+        <?php
+        if(isset($_SESSION['username']))
+        {
+
+        }
+        else
+        {
+            echo ' <div class="nav-item navbar px-2">
             <button class="btn btn-outline-success" data-toggle="modal" data-target="#login-modal">Login or Register</button>
-        </div>
+        </div>';
+        }
+        ?>
+
     </div>
 </nav>
