@@ -4,6 +4,37 @@ if(empty($_SESSION['username']))
 {
     header('Location: index.php');
 }
+include "includes/database.php";
+if(isset($_POST['button']))
+{
+    $email = $_POST['email'];
+    $oldPassword = $_POST['oldPassword'];
+    $newPassword = $_POST['newPassword'];
+    $confirmPassword = $_POST['confirmPassword'];
+
+//$query = $conn->prepare("SELECT * FROM project.user_table WHERE email = :email");
+//$query->execute(array(':email' => $email));
+//$query2 = $query->fetch(PDO::FETCH_ASSOC);
+
+    $query = $conn->prepare("SELECT password FROM user_table WHERE email=:email");
+    $query->execute(array(':email' => $email));
+    $query2 = $query->fetch(PDO::FETCH_ASSOC);
+
+
+    if (!$query) {
+        echo '<script type="text/javascript"> alert("The email you entered does not exist!")</script>';
+    } else if ($oldPassword != $conn->prepare($query, 0)) {
+        echo '<script type="text/javascript"> alert("you entered an incorrect password!")</script>';
+    }
+    if ($newPassword == $confirmPassword)
+        $query1 = $conn->prepare("UPDATE user_table SET password='$newPassword' where email=:email");
+        $query1->execute();
+    if ($query) {
+        echo '<script type="text/javascript"> alert("you have successfully changed your password!")</script>';
+    } else {
+        echo '<script type="text/javascript"> alert("passwords do not match!")</script>';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +114,12 @@ if(empty($_SESSION['username']))
         </button>
       </div>
       <div class="modal-body">
+          <form action="viewProfile.php">
         <div class="form-group" align="left">
+                            <label class="control-label col-xs-3" for="email">E mail</label>
+                            <div class="col-xs-9">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                            </div>
                              <label class="control-label col-xs-3" for="oldPassword">Old Password</label>
                              <div class="col-xs-9">
                                  <input type="password" class="form-control" name="oldPassword" id="oldPassword" placeholder="Enter Old Password">
@@ -97,13 +133,17 @@ if(empty($_SESSION['username']))
                                  <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm new Password">
                              </div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"> Change Password</button>
+          <input name="button" type="submit" id="signup" value="Change Password" />
+<!--        <input type="button" class="btn btn-primary"> Change Password</input>-->
       </div>
+          </form>
     </div>
   </div>
 </div>
+
 </div>
 <div class="modal fade" id="ContactusModal" tabindex="-1" role="dialog" aria-labelledby="ContactusModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -116,6 +156,10 @@ if(empty($_SESSION['username']))
       </div>
       <div class="modal-body">
         <div class="form-group" align="left">
+                            <label class="control-label col-xs-3" for="oldPassword">Old Password</label>
+                            <div class="col-xs-9">
+                                <input type="password" class="form-control" name="oldPassword" id="oldPassword" placeholder="Enter Old Password">
+                            </div>
                              <label class="control-label col-xs-3" for="oldPassword">Old Password</label>
                              <div class="col-xs-9">
                                  <input type="password" class="form-control" name="oldPassword" id="oldPassword" placeholder="Enter Old Password">
