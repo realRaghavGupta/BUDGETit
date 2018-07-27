@@ -35,6 +35,12 @@
         <?php
         if(isset($_SESSION['username']))
         {
+            echo ' <div class="nav-item navbar px-2">
+ <form action=logout.php>
+ <input type="button" class="btn btn-outline-success" >
+            <button class="btn btn-outline-success" >Logout</button>
+        </form></div>';
+
 
         }
         else
