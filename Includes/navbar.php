@@ -4,7 +4,8 @@
         <img src="includes/assets/images/logo.png" class="logo" alt="brand">
     </a>
     <div class="toggle">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseContents" aria-controls="collapseContents" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseContents"
+                aria-controls="collapseContents" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
@@ -20,7 +21,8 @@
                 <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
                     Services
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -33,8 +35,7 @@
             </li>
         </ul>
         <?php
-        if(isset($_SESSION['username']))
-        {
+        if (isset($_SESSION['username'])) {
             echo ' <div class="nav-item navbar px-2">
  <form action=logout.php>
  <input type="button" class="btn btn-outline-success" >
@@ -42,9 +43,7 @@
         </form></div>';
 
 
-        }
-        else
-        {
+        } else {
             echo ' <div class="nav-item navbar px-2">
             <button class="btn btn-outline-success" data-toggle="modal" data-target="#login-modal">Login or Register</button>
         </div>';

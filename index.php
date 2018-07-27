@@ -35,7 +35,7 @@ if (isset($_POST['login-submit'])) {
                             <div class="col-lg-11">
                                 <a href="#" class="active" id="login_tab">Login</a>
                             </div>
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
 
@@ -61,7 +61,6 @@ if (isset($_POST['login-submit'])) {
                                 </div>
                                 <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
                             </form>
-
 
 
                         </div>

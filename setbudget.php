@@ -1,33 +1,34 @@
 <?php
 session_start();
-if(empty($_SESSION['username']))
-{
+if (empty($_SESSION['username'])) {
     header('Location: index.php');
 }
-require ('addbudget.php');
-require_once('Includes/connection.php');
-require_once('Includes/splitExpenseOp.php');
-if(isset($_POST['submit']))
-{
-  $uname=$_SESSION['username'];
-  $conn = new DatabaseConnection();
-  $op=new splitOperation();
-  $dbcon = $conn->connect();
-  $uid=$op->getUser_id($uname,$dbcon);
+//if(empty($_SESSION['username']))
+//{
+//    header('Location: index.php');
+//}
+require('addbudget.php');
+require_once('includes/connection.php');
+require_once('includes/splitExpenseOp.php');
+if (isset($_POST['submit'])) {
+    $uname = $_SESSION['username'];
+    $conn = new DatabaseConnection();
+    $op = new splitOperation();
+    $dbcon = $conn->connect();
+    $uid = $op->getUser_id($uname, $dbcon);
 
-  $category = $_POST['category'];
-  $month = $_POST['month'];
-  $amount = $_POST['amount'];
-  echo $uid;
-  $obj = new AddBudget;
-  $obj->newbudget($category,$month,$uid,$amount);
+    $category = $_POST['category'];
+    $month = $_POST['month'];
+    $amount = $_POST['amount'];
+    echo $uid;
+    $obj = new AddBudget;
+    $obj->newbudget($category, $month, $uid, $amount);
 
 }
 ?>
 
-
-
-<html xmlns:padding="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!-- REFERENCES:
     BootStrap : https://getbootstrap.com/docs/4.1
@@ -36,98 +37,98 @@ if(isset($_POST['submit']))
     Header: https://stackoverflow.com/questions/18712338/make-header-and-footer-files-to-be-included-in-multiple-html-pages
   -->
     <title>BUDGETit</title>
-        <?php include "includes/header.php" ?>
+    <?php include "includes/header.php" ?>
 
-    <?php $monthDetails = array("1"=>"January","2"=>"February","3"=>"March",
-                      "4"=>"April","5"=>"May","6"=>"June","7"=>"July",
-                        "8"=>"August","9"=>"September","10"=>"October",
-                        "11"=>"November","12"=>"December");
+    <?php $monthDetails = array("1" => "January", "2" => "February", "3" => "March",
+        "4" => "April", "5" => "May", "6" => "June", "7" => "July",
+        "8" => "August", "9" => "September", "10" => "October",
+        "11" => "November", "12" => "December");
     ?>
 </head>
 <body>
 
 <!-- Nav Bar -->
 
-<?php include "Includes/navbar.php" ?>
+<?php include "includes/navbar.php" ?>
 
 <!--<div id="header"></div><br/>-->
 <div class="container-fluid">
     <div class="card bg-dark text-white">
         <!--        <img class="card-img" style="-webkit-filter: blur(3px); filter: blur(3px);" src="./images/splitBg.jpg" alt="Card image cap">-->
         <div class="card-img-overlay">
-            <div class="container-fluid" align="center" >
+            <div class="container-fluid">
                 <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
                     <h4><b> Set Budget</b></h4>
-                    <div class="card-body" style="max-width: 100%;"  padding:10px; align="left">
-                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+                    <div class="card-body" style="max-width: 100%;">
+                        <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                             <div class="form-group">
-                                <label for="Category">Category</label>
-                                <select class="custom-select" id="inputGroupSelect01" name="category">;
-                                  <?php
-                                    
+                                <label>Category</label>
+                                <select class="custom-select" name="category">
+                                    <?php
+
                                     $conn = new DatabaseConnection();
-                                    $op=new splitOperation();
+                                    $op = new splitOperation();
                                     $dbcon = $conn->connect();
                                     $stmt = $dbcon->prepare("select * from category_table");
                                     $stmt->execute();
                                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                      echo '<option selected>select a category</option>';
-                                    foreach($rows as $row){
+                                    echo '<option selected>select a category</option>';
+                                    foreach ($rows as $row) {
 
-                                        echo '<option value="'.$row['category_id'].'">'.$row['name'].'</option>';
-                                  } ?>
+                                        echo '<option value="' . $row['category_id'] . '">' . $row['name'] . '</option>';
+                                    } ?>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="Amount">Amount</label>
-                                <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount" required>
+                                <label>Amount</label>
+                                <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount"
+                                       required>
                             </div>
                             <div class="form-group">
-                                <label for="Month">Month</label>
-                                
-                                <select class="custom-select" id="inputGroupSelect01" name="month" onchange="this.form.submit()">
-                                    <?php
-                                        foreach($monthDetails as $x => $xValue){
+                                <label>Month</label>
 
-                                        echo '<option value="'.$x.'">'.$xValue.'</option>';
-                                  } ?>
+                                <select class="custom-select" id="inputGroupSelect01" name="month"
+                                        onchange="this.form.submit()">
+                                    <?php
+                                    foreach ($monthDetails as $x => $xValue) {
+
+                                        echo '<option value="' . $x . '">' . $xValue . '</option>';
+                                    } ?>
                                 </select>
                             </div>
                             <!-- Button (Double) -->
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <button id="submit" name="submit" class="btn btn-primary" value="1">Set Budget</button>
-                                    <a id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+                                    <button id="submit" name="submit" class="btn btn-primary" value="1">Set Budget
+                                    </button>
+                                    <a id="cancel" class="btn btn-default">Cancel</a>
                                 </div>
                             </div>
 
                         </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
     function myFunction() {
         document.getElementById("inputEmail").multiple = true;
-        var email =  document.getElementById("inputEmail").value;
+        var email = document.getElementById("inputEmail").value;
         var amount = document.getElementById("amount").value;
-        if(email.length == 0)
-        {
+        if (email.length == 0) {
             alert('Please enter Email ID');
             return false;
         }
-        if(amount.length == 0)
-        {
+        if (amount.length == 0) {
             alert('Amount Can not be empty');
             return false;
         }
         return true;
         document.getElementById("demo").innerHTML = "The email field now accept multiple values.";
     }
-</script>
-<script>
-    $("#header").load("./header.html");
 </script>
 </body>
 </html>

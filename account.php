@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <title>BUDGETit - Account Details</title>
-<?php include "head.php"; ?>
+    <?php include "head.php"; ?>
 </head>
 <body>
-<?php include "navbar.php";?>
+<?php include "navbar.php"; ?>
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -57,8 +57,8 @@
                     data.addColumn('number', '');
 
                     data.addRows([
-                        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
-                        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+                        [0, 0, 0], [1, 10, 5], [2, 23, 15], [3, 17, 9], [4, 18, 10], [5, 9, 5],
+                        [6, 11, 3], [7, 27, 19], [8, 33, 25], [9, 40, 32], [10, 32, 24], [11, 35, 27],
                         [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
                         [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
                         [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
@@ -90,6 +90,6 @@
     </div>
 </div>
 
-<?php include "footer.php";?>
+<?php include "footer.php"; ?>
 </body>
 </html>
