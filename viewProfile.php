@@ -11,23 +11,31 @@ if(isset($_POST['button']))
     $oldPassword = $_POST['oldPassword'];
     $newPassword = $_POST['newPassword'];
     $confirmPassword = $_POST['confirmPassword'];
-
+//    echo 'inside isset';
 //$query = $conn->prepare("SELECT * FROM project.user_table WHERE email = :email");
 //$query->execute(array(':email' => $email));
 //$query2 = $query->fetch(PDO::FETCH_ASSOC);
 
-    $query = $conn->prepare("SELECT password FROM user_table WHERE email=:email");
-    $query->execute(array(':email' => $email));
+    $query = $conn->prepare("SELECT * FROM user_table WHERE email=:email  AND password= :password");
+    $query->execute(array(':email' => $email,'password' => $oldPassword));
     $query2 = $query->fetch(PDO::FETCH_ASSOC);
 
+    if($query2 != true)
 
-    if (!$query) {
-        echo '<script type="text/javascript"> alert("The email you entered does not exist!")</script>';
-    } else if ($oldPassword != $conn->prepare($query, 0)) {
+    {
         echo '<script type="text/javascript"> alert("you entered an incorrect password!")</script>';
     }
-    if ($newPassword == $confirmPassword)
+    else if ($newPassword == $confirmPassword)
         $query1 = $conn->prepare("UPDATE user_table SET password='$newPassword' where email=:email");
+
+    $query1->bindParam(':email', $email);
+
+    $query1->execute();
+
+
+
+
+//        echo 'insise pasword';
         $query1->execute();
     if ($query) {
         echo '<script type="text/javascript"> alert("you have successfully changed your password!")</script>';
@@ -114,7 +122,7 @@ if(isset($_POST['button']))
         </button>
       </div>
       <div class="modal-body">
-          <form action="viewProfile.php">
+          <form action="viewProfile.php" method="post">
         <div class="form-group" align="left">
                             <label class="control-label col-xs-3" for="email">E mail</label>
                             <div class="col-xs-9">
