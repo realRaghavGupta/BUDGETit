@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47244302-0c14-4f4a-9ca3-fc61c7810961" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Includes/addExpenseOp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Includes/assets/images/Profileicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Includes/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Includes/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Includes/populatechat.php" beforeDir="false" afterPath="$PROJECT_DIR$/Includes/populatechat.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accountDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/accountDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newaddexpense.php" beforeDir="false" afterPath="$PROJECT_DIR$/newaddexpense.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/viewProfile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,26 +37,26 @@
       <file leaf-file-name="newaddexpense.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newaddexpense.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="-1353">
               <caret line="24" column="29" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="24" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewProfile.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewProfile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewProfile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="34">
+              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accountDetails.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="accountDetails.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accountDetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2890">
-              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+            <state relative-caret-position="161">
+              <caret line="95" column="66" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -140,8 +137,8 @@
         <option value="$PROJECT_DIR$/Includes/addExpenseOp.php" />
         <option value="$PROJECT_DIR$/Includes/populatechat.php" />
         <option value="$PROJECT_DIR$/Includes/navbar.php" />
-        <option value="$PROJECT_DIR$/accountDetails.php" />
         <option value="$PROJECT_DIR$/viewProfile.php" />
+        <option value="$PROJECT_DIR$/accountDetails.php" />
       </list>
     </option>
   </component>
@@ -213,6 +210,7 @@
       <recent name="C:\Users\Raghav Gupta\Documents\GitHub\BUDGETit\assets\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WebProject\Includes\assets\images" />
       <recent name="C:\Users\Raghav Gupta\Documents\GitHub\BUDGETit\includes" />
       <recent name="C:\Users\Raghav Gupta\Documents\GitHub\BUDGETit\includes\js" />
       <recent name="C:\Users\Raghav Gupta\Documents\GitHub\BUDGETit\includes\css" />
@@ -255,7 +253,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32535000" />
+    <option name="totallyTimeSpent" value="33656000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -266,9 +264,9 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32920355" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25020242" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25020242" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -329,7 +327,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/header.html" />
     <entry file="file://$PROJECT_DIR$/includes/Headeraa.php" />
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newaddexpense.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Includes/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -524,17 +514,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accountDetails.php">
+    <entry file="file://$PROJECT_DIR$/newaddexpense.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2890">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        <state relative-caret-position="-1353">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="24" selection-end-column="29" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Includes/assets/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/viewProfile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="34">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accountDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="95" column="66" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
         </state>
       </provider>
     </entry>

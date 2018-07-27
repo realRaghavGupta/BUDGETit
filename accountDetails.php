@@ -93,6 +93,7 @@ if(empty($_SESSION['username']))
         </div>
 
         <select class="custom-select" id="inputGroupSelect01" name="month" onchange="this.form.submit()">
+            <option  value="0"> Choose a month to populate Data...</option>
           <?php
             foreach($monthDetails as $x => $xValue){
 
