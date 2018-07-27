@@ -20,6 +20,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
             </li>
+            <?php
+        if (isset($_SESSION['username'])) {
+            echo '
+        
+            <li class="nav-item">
+                <a class="nav-link" href="accountDetails.php">Account Details</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
@@ -33,11 +40,13 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="viewProfile.php">Others</a>
                 </div>
-            </li>
+            </li>';
+            }
+            ?>
         </ul>
         <?php
         if (isset($_SESSION['username'])) {
-            echo ' <div class="nav-item navbar px-2">
+            echo '
  <form action=logout.php>
  <input type="button" class="btn btn-outline-success" >
             <button class="btn btn-outline-success" >Logout</button>
