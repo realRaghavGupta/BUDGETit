@@ -18,7 +18,7 @@ if(empty($_SESSION['username']))
     <!-- Nav Bar -->
     <?php include "includes/navbar.php" ?>
 
-
+<!-- Code by Sowmya Umesh B00788667 -->
     <?php
 
     require  './Includes/addExpenseOp.php';
@@ -35,10 +35,9 @@ if(empty($_SESSION['username']))
 
     ?>
 
-    <!--<div id="header"></div><br/>-->
+
     <div class="container-fluid">
         <div class="card bg-dark text-white">
-            <!--        <img class="card-img" style="-webkit-filter: blur(3px); filter: blur(3px);" src="./images/splitBg.jpg" alt="Card image cap">-->
             <div class="card-img-overlay">
                 <div class="container-fluid" align="center" >
                     <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
@@ -68,37 +67,12 @@ if(empty($_SESSION['username']))
                                 </div>
 
 
-
-
-
-
-                                <!--                                    <option selected>select a category</option>-->
-                                <!--                                    <option value="1">Food</option>-->
-                                <!--                                    <option value="2">Groceries</option>-->
-                                <!--                                    <option value="3">WIFI</option>-->
-                                <!--                                    <option value="4">Electricity</option>-->
-                                <!--                                    <option value="5">Rent</option>-->
-                                <!--                                    <option value="6">General</option>-->
-
-
                                 <div class="form-group">
                                     <label class="control-label col-xs-3" for="Amount">Amount</label>
                                     <div class="col-xs-9">
                                         <input type="number" class="form-control" name="amount" id="amount" placeholder="Enter Amount">
                                     </div>
 
-                                    <!--                                <div class="form-check mb-2 mr-sm-2">-->
-                                    <!--                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">-->
-                                    <!--                                    <label class="form-check-label" for="inlineFormCheck">-->
-                                    <!--                                        Split Bill-->
-                                    <!--                                    </label>-->
-                                    <!--                                </div>-->
-
-                                    <!--                                <label class="control-label col-xs-3" for="inputEmail">Email IDs</label>-->
-                                    <!--                                <div class="col-xs-9">-->
-                                    <!--                                    <input type="email" class="form-control"  name="inputEmail" id="inputEmail" placeholder="Email IDs">-->
-                                    <!--                                </div>-->
-                                    <!--                            </div>-->
                                     <div class="form-group">
                                         <div class="form-row">
 
@@ -146,10 +120,3 @@ if(empty($_SESSION['username']))
 
 
 
-<?php
-/**
- * Created by PhpStorm.
- * User: Sowmya Umesh
- * Date: 7/4/2018
- * Time: 2:26 PM
- */

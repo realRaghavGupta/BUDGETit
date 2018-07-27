@@ -18,8 +18,23 @@ public function getUser_id($username,$dbcon)
       exit($e->getMessage());
   }
 }
-
-public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id)
+public function categoryName($category,$dbcon)
+{
+  try {
+    $stmt = $dbcon->prepare("select name from category_table where category_id=?");
+    $stmt->execute([$category]);
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach($rows as $row){
+        $categoryName=$row['name'];
+  }
+    return $categoryName;
+  }
+  catch (PDOException $e)
+  {
+      exit($e->getMessage());
+  }
+}
+public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id,$email,$username)
 {
   //get Transaction_id from expense table and update here
   $date = date("Y-m-d");
@@ -31,6 +46,25 @@ public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split
    $query = "update split_table set transaction_id = '$transaction_id' where split_id = '$split_id' ";
    $stmt= $dbcon->prepare($query);
    $stmt->execute();
+   $split = new splitOperation();
+   $categoryName = $split->categoryName($category,$dbcon);
+  //Worked by Raghav Gupta *************
+    include "email.php";
+    $emails = explode(",",$email);
+    try {
+        foreach ($emails as $email1)
+        {
+            $mail -> addAddress("$email1");
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Budgetit Expense';
+            $mail->Body    = "$categoryName expense added by $username <br> Total amount is: $splitAmount";
+            $mail ->send();
+        }
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    }
+    //**************
   return true;
 }
 public function splitAmount($email,$amount)
@@ -65,7 +99,7 @@ public function updateSplitDetailsTable($email,$dbcon,$amount,$user_id,$splitAmo
       //call splitAmount function
       $splitAmount = $split->splitAmount($email,$amount);
       //call insertSplitExpense function
-      $split->insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id);
+      $split->insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id,$email,$username);
       //call update splitDetails function
       $split->updateSplitDetailsTable($email,$dbcon,$amount,$user_id,$splitAmount,$split_id);
       return true;

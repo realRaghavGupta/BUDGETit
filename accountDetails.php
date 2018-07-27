@@ -27,9 +27,8 @@ if(empty($_SESSION['username']))
       {
         $curr_month=$_POST['month'];
         $uname=$_SESSION['username'];
-
-                                    $conn = new DatabaseConnection;
-                                    $op=new splitOperation;
+        $conn = new DatabaseConnection;
+        $op=new splitOperation;
                                     $dbcon = $conn->connect();
                                     $uid=$op->getUser_id($uname,$dbcon);
                                     //echo "userid".$uid;
@@ -81,7 +80,6 @@ if(empty($_SESSION['username']))
 
 </head>
 <body>
-
 <!-- Nav Bar -->
 <?php include "includes/navbar.php" ?>
 
@@ -93,6 +91,7 @@ if(empty($_SESSION['username']))
         </div>
 
         <select class="custom-select" id="inputGroupSelect01" name="month" onchange="this.form.submit()">
+            <option  value="0"> Choose a month to populate Data...</option>
           <?php
             foreach($monthDetails as $x => $xValue){
 
@@ -141,9 +140,9 @@ if(empty($_SESSION['username']))
                     </div>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-primary" style="color:#0E2658;">Add Budget Limit</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='setbudget.php'" color:#0E2658;">Add Budget Limit</button>
                     </br> </br> </br> </br>
-                    <button type="button" class="btn btn-outline-primary" style="color:#0E2658;">Add Expense</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='newaddexpense.php'" style="color:#0E2658;">Add Expense</button>
                 </td>
             </tr>
         </table>
