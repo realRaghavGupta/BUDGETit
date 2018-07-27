@@ -1,3 +1,4 @@
+<!--code added by Raghav Gupta B00781125-->
 <?php
 /*******************************************************************************
 * FPDF                                                                         *
@@ -1896,3 +1897,4 @@ protected function _enddoc()
 }
 }
 ?>
+<!--code added by Raghav Gupta B00781125-->
