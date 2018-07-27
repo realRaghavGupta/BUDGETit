@@ -22,13 +22,13 @@ if(empty($_SESSION['username']))
   <div role="main" class="container-fluid" style="max-width:100%;" align="center">
 
   <div class="card" style="width: 50%;" align="center">
-<img src="./Includes/assets/images/splitBg.jpg" class="w3-circle" alt="Alps" style="max-width:40%; max-height:40%;">
+<img src="./Includes/assets/images/Profileicon.png" class="w3-circle" alt="Alps" style="max-width:40%; max-height:40%;">
   <div class="card-body">
     <h4 class="card-title" style="font-family: serif;"><b> Profile Details </b></h4>
     <table>
       <tr>
         <td>
-
+            <!-- Code by Sowmya Umesh B00788667 -->
             <?php
             require_once('./Includes/connection.php');
             require  './Includes/addExpenseOp.php';

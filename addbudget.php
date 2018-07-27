@@ -6,12 +6,7 @@ class AddBudget
 	{
 		try
 		{
-			  // $category = $_POST['category'];
-			  // $month = $_POST['month'];
-			  // $uid=$_POST['uid'];
-			  // $amount = $_POST['amount'];
-
-			  //$conn=$this->connection();
+			  
 			  $dbcon = new DatabaseConnection;
 			  $conn = $dbcon->connect(); 
 
