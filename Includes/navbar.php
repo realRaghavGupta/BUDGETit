@@ -28,7 +28,7 @@
                     <a class="dropdown-item" href="setBudget.php">Set Budget Limit</a>
                     <a class="dropdown-item" href="splitExpense.php">Split Expense</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#services">Others</a>
+                    <a class="dropdown-item" href="viewProfile.php">Others</a>
                 </div>
             </li>
         </ul>
