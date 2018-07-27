@@ -19,7 +19,7 @@ public function getUser_id($username,$dbcon)
   }
 }
 
-public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id,$email)
+public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id)
 {
   //get Transaction_id from expense table and update here
   $date = date("Y-m-d");
@@ -31,33 +31,6 @@ public function insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split
    $query = "update split_table set transaction_id = '$transaction_id' where split_id = '$split_id' ";
    $stmt= $dbcon->prepare($query);
    $stmt->execute();
-   include "email.php";
-    $emails = explode(",",$email);
-
-
-
-
-   try {
-          foreach ($emails as $email1)
-          {
-
-            $mail -> addAddress("$email1");
-              $mail->isHTML(true);                                  // Set email format to HTML
-              $mail->Subject = 'Budgetit Expense';
-              $mail->Body    = "'$category'.'expense added'.'Total amount is: '.'$splitAmount'";
-            $mail ->send();
-
-
-          }
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-    }
-
-
-
-
-
   return true;
 }
 public function splitAmount($email,$amount)
@@ -92,7 +65,7 @@ public function updateSplitDetailsTable($email,$dbcon,$amount,$user_id,$splitAmo
       //call splitAmount function
       $splitAmount = $split->splitAmount($email,$amount);
       //call insertSplitExpense function
-      $split->insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id,$email);
+      $split->insertSplitExpense($category,$user_id,$splitAmount,$dbcon,$split_id);
       //call update splitDetails function
       $split->updateSplitDetailsTable($email,$dbcon,$amount,$user_id,$splitAmount,$split_id);
       return true;
