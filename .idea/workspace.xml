@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47244302-0c14-4f4a-9ca3-fc61c7810961" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Includes/assets/images/Profileicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/accountDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/viewProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newaddexpense.php" beforeDir="false" afterPath="$PROJECT_DIR$/newaddexpense.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newaddexpense.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="newaddexpense.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newaddexpense.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1353">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="136">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -52,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accountDetails.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="accountDetails.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accountDetails.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
@@ -133,12 +131,12 @@
         <option value="$PROJECT_DIR$/Includes/database.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Includes/PHPMailer/addExpenseOp.php" />
-        <option value="$PROJECT_DIR$/newaddexpense.php" />
         <option value="$PROJECT_DIR$/Includes/addExpenseOp.php" />
         <option value="$PROJECT_DIR$/Includes/populatechat.php" />
         <option value="$PROJECT_DIR$/Includes/navbar.php" />
         <option value="$PROJECT_DIR$/viewProfile.php" />
         <option value="$PROJECT_DIR$/accountDetails.php" />
+        <option value="$PROJECT_DIR$/newaddexpense.php" />
       </list>
     </option>
   </component>
@@ -250,10 +248,18 @@
       <workItem from="1532449073915" duration="3129000" />
       <workItem from="1532453746950" duration="1571000" />
     </task>
+    <task id="LOCAL-00001" summary="minor changes in account details and profpic">
+      <created>1532703754289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1532703754289</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33656000" />
+    <option name="totallyTimeSpent" value="33997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -320,6 +326,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor changes in account details and profpic" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes in account details and profpic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -514,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newaddexpense.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1353">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Includes/assets/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -535,6 +538,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="95" column="66" selection-start-line="95" selection-start-column="66" selection-end-line="95" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newaddexpense.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
         </state>
       </provider>
     </entry>
