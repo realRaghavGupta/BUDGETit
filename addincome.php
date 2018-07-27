@@ -70,7 +70,7 @@ if (empty($_SESSION['username'])) {
                             </div>
                         </form>
 
-
+                     <!--code added by Raghav Gupta B00781125-->
                         <?php
 
 
@@ -110,6 +110,7 @@ if (empty($_SESSION['username'])) {
                             $query1->execute();
                         }
                         ?>
+                        <!-- -->
                     </div>
                 </div>
             </div>

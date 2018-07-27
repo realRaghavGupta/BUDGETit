@@ -1,3 +1,4 @@
+<!--code added by Raghav Gupta B00781125-->
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -18,3 +19,5 @@ $mail->Port = 587;                                    // TCP port to connect to
 //Recipients
 $mail->setFrom('budgetit@setkernel.com', 'BUDGETit');
 $mail->addReplyTo('budgetit@setkernel.com', 'Information');
+
+//<!--code added by Raghav Gupta B00781125-->

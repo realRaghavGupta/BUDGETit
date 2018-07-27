@@ -1,3 +1,4 @@
+<!--code added by Sandeep Kaur B00786324-->
 <?php
 session_start();
 include "includes/database.php";
@@ -15,6 +16,7 @@ if (isset($_POST['login-submit'])) {
     }
 }
 ?>
+<!-- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
