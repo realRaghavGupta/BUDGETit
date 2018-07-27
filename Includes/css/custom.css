@@ -402,7 +402,8 @@ color codes: https://htmlcolorcodes.com/ */
 /*--------------------------------------------------------------------*/
 
 #containercenter {
-    align: center;
+    width: 50%;
+    margin: 0 auto;
 }
 
 /*.card-body{*/

@@ -41,8 +41,8 @@ if (isset($_POST['Add'])) {
 <div class="container-fluid">
     <div class="card bg-dark text-white">
         <div class="card-img-overlay">
-            <div class="container-fluid" id="containercenter">
-                <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
+            <div class="container-fluid" >
+                <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px" id="containercenter">
                     <h4><b> Add Expense</b></h4>
                     <div class="card-body" style="max-width: 100%;">
                         <form data-toggle="validator" action="newaddexpense.php" method="post">

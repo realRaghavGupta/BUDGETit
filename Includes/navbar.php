@@ -27,7 +27,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="newaddexpense.php">Add Expense</a>
-                    <a class="dropdown-item" href="setBudget.php">Set Budget Limit</a>
+                    <a class="dropdown-item" href="addincome.php">Add Income</a>
+                    <a class="dropdown-item" href="setbudget.php">Set Budget Limit</a>
                     <a class="dropdown-item" href="splitExpense.php">Split Expense</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="viewProfile.php">Others</a>

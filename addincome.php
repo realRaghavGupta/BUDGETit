@@ -22,7 +22,7 @@ if (empty($_SESSION['username'])) {
     <div class="card bg-dark text-white">
         <div class="card-img-overlay">
             <div class="container-fluid">
-                <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
+                <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px" id="containercenter">
                     <h4><b> Add Income</b></h4>
                     <div class="card-body" style="max-width: 100%;">
 

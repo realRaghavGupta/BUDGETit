@@ -73,7 +73,7 @@ foreach ($rows as $row) {
 <!--  <div id="header"></div><br/>-->
 <div role="main" class="container-fluid" style="max-width:100%;">
 
-    <div class="card" style="width: 50%;">
+    <div class="card" style="width: 50%;" id="containercenter">
         <img src="./includes/assets/images/Profileicon.png" class="w3-circle" alt="Alps"
              style="max-width:40%; max-height:40%;">
         <div class="card-body">

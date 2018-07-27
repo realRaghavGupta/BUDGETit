@@ -17,9 +17,9 @@
         <!--        <img class="card-img" style="-webkit-filter: blur(3px); filter: blur(3px);" src="./images/splitBg.jpg" alt="Card image cap">-->
         <div class="card-img-overlay">
             <div class="container-fluid">
-                <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px">
+                <div class="card" style="max-width: 40%; color:#0E2658; opacity: 0.8; padding:10px" id="containercenter">
                     <h4><b>Signup</b></h4>
-                    <div class="card-body" style="max-width: 100%;">
+                    <div class="card-body" style="max-width: 100%;" >
                         <form class="form" action="signup.php" method="post">
                             <div class="form-group">
                                 <label>First Name</label>
