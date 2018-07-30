@@ -26,6 +26,7 @@ class ChartPopulate
         }
     }
 
+    // Implemented by Mary Ann Joji B00783053
     public function populateBudgetChart($username)
     {
         try {

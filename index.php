@@ -35,7 +35,7 @@ if (isset($_POST['login-submit'])) {
                     <div class="panel-heading col-lg-12">
                         <div class="row">
                             <div class="col-lg-11">
-                                <a href="#" class="active" id="login_tab">Login</a>
+                                <a href="#" class="active" id="login_tab" style="color:#0E2658;">Login</a>
                             </div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -59,9 +59,9 @@ if (isset($_POST['login-submit'])) {
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" name="login-submit" id="login_submit"
-                                           class="form-control btn btn-login" value="Log In">
+                                           class="form-control btn btn-login" style="background-color:#0E2658;"value="Log In">
                                 </div>
-                                <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                <a href="" tabindex="5" class="forgot-password" style="color:#0E2658;">Forgot Password?</a>
                             </form>
 
 
@@ -172,9 +172,9 @@ if (isset($_POST['login-submit'])) {
 
 </div>
 <!-- Footer -->
-<footer class="footer bg-success pt-4 mt-4">
+<footer class="footer bg-success pt-4 mt-4" style="background-color:#0E2658;">
 
-    <div class="container-fluid text-center text-md-left">
+    <div class="container-fluid text-center text-md-left" >
 
         <div class="row text-white">
             <div class="col-md-6 mt-md-0 mt-3">
@@ -187,21 +187,21 @@ if (isset($_POST['login-submit'])) {
                 <h5 class="text-uppercase"><b>Services</b></h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="newaddexpense.php" class="text-dark">Add Expense</a>
+                        <a href="newaddexpense.php" class="text-light">Add Expense</a>
                     </li>
                     <li>
-                        <a href="setbudget.php" class="text-dark">Set Budget</a>
+                        <a href="setbudget.php" class="text-light">Set Budget</a>
                     </li>
                     <li>
-                        <a href="splitExpense.php" class="text-dark">Split Expense</a>
+                        <a href="splitExpense.php" class="text-light">Split Expense</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href=""> MaryAnn</a>
+    <div class="footer-copyright text-center py-3" style="color:text-white">© 2018 Copyright:
+        <a href="" class="text-light"> BUDGETit</a>
     </div>
 
 </footer>

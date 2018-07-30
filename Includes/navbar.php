@@ -15,10 +15,10 @@
 
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="index.php#about">About</a>
             </li>
             <?php
         if (isset($_SESSION['username'])) {
@@ -49,16 +49,18 @@
             echo '
  <form action=logout.php>
  
-            <button class="btn btn-outline-success" >Logout</button>
+            <button class="btn btn-primary" style="background-color:#0E2658;" >Logout</button>
         </form></div>';
 
 
         } else {
             echo ' <div class="nav-item navbar px-2">
-            <button class="btn btn-outline-success" data-toggle="modal" data-target="#login-modal">Login</button>
+            <button class="btn btn-primary" style="background-color:#0E2658;" data-toggle="modal" data-target="#login-modal">Login</button>
+            <p>&nbsp;&nbsp;</p>
             <form action=signup.php>
+
  
-            <button class="btn btn-outline-success" >Register</button>
+            <button class="btn btn-primary" style="background-color:#0E2658;" >Register</button>
         </form>
         </div>';
         }
