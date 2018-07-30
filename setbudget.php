@@ -7,7 +7,7 @@ if (empty($_SESSION['username'])) {
 //{
 //    header('Location: index.php');
 //}
-require('addbudget.php');
+require('Includes/addbudget.php');
 require_once('includes/connection.php');
 require_once('includes/splitExpenseOp.php');
 if (isset($_POST['submit'])) {
@@ -99,9 +99,9 @@ if (isset($_POST['submit'])) {
                             <!-- Button (Double) -->
                             <div class="form-group">
                                 <div class="col-md-8">
-                                    <button id="submit" name="submit" class="btn btn-primary" value="1">Set Budget
+                                    <button id="submit" name="submit" button : class="btn btn-primary" style="background-color:#0E2658;" value="1">Set Budget
                                     </button>
-                                    <a id="cancel" class="btn btn-default">Cancel</a>
+                                    <a id="cancel" button : class="btn btn-primary" style="background-color:#0E2658; color: white;">Cancel</a>
                                 </div>
                             </div>
 

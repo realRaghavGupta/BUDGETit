@@ -63,6 +63,7 @@ if (empty($_SESSION['username'])) {
                                     </div>
                                     <div class="col">
                                         <input name="button" type="submit" id="signup" class="btn btn-primary"
+                                               style="background-color:#0E2658;"
                                                onclick="return myFunction()" value="Add"/>
                                         <!--                                        <button type="submit" class="btn btn-primary" onclick="return myFunction()" style="background-color:#0E2658;"> Add </button>-->
                                     </div>

@@ -75,7 +75,7 @@ if (isset($_POST['Add'])) {
                                     <input type="number" class="form-control" name="amount" id="amount"
                                            placeholder="Enter Amount">
                                 </div>
-
+                                <br>
                                 <div class="form-group">
                                     <div class="form-row">
 
