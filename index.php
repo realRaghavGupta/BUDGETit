@@ -1,3 +1,4 @@
+<!--code added by Sandeep Kaur B00786324-->
 <?php
 session_start();
 include "includes/database.php";
@@ -15,6 +16,7 @@ if (isset($_POST['login-submit'])) {
     }
 }
 ?>
+<!-- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@ if (isset($_POST['login-submit'])) {
                     <div class="panel-heading col-lg-12">
                         <div class="row">
                             <div class="col-lg-11">
-                                <a href="#" class="active" id="login_tab">Login</a>
+                                <a href="#" class="active" id="login_tab" style="color:#0E2658;">Login</a>
                             </div>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -57,9 +59,9 @@ if (isset($_POST['login-submit'])) {
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" name="login-submit" id="login_submit"
-                                           class="form-control btn btn-login" value="Log In">
+                                           class="form-control btn btn-login" style="background-color:#0E2658;"value="Log In">
                                 </div>
-                                <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                <a href="" tabindex="5" class="forgot-password" style="color:#0E2658;">Forgot Password?</a>
                             </form>
 
 
@@ -100,17 +102,8 @@ if (isset($_POST['login-submit'])) {
     <div class="aboutus" id="about">
         <div class="row">
             <div class=" col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                <h4><b>About Us</b></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla at libero at finibus.
-                    Mauris dui felis, sagittis in dapibus eget, porta quis elit. Donec sodales placerat porta. Vivamus
-                    laoreet magna eget facilisis condimentum. Donec porttitor elit nibh, et mollis nunc egestas at.
-                    Vestibulum tristique vehicula ligula vel mollis. Quisque ante lectus, tincidunt maximus scelerisque
-                    in, molestie nec eros. Vestibulum finibus, lacus at gravida condimentum, tellus mauris imperdiet
-                    orci.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla at libero at finibus.
-                    Mauris dui felis, sagittis in dapibus eget, porta quis elit. Donec sodales placerat porta. Vivamus
-                    laoreet magna eget facilisis condimentum. Donec porttitor elit nibh, et mollis nunc egestas at.
-                    Vestibulum tristique vehicula ligula vel mollis.</p>
+                <h4><b>What is BUDGETit?</b></h4>
+                <p>BUDGETit is the perfect partner for users who look forward to track their budget and manage or split their expenses among friends using one single application. The application helps to have a hassle-free management of your expenses. The application ensures that you can organize your expenses in the best way by giving you he option to assign a category for each expense. A limit can be set for the amount you spend for each category, which would help users to compare their expenses and the budget limit that has been set for the month. Our application has been integrated with interactive charts that would help the user to visualize the summary of their expenses for every month. There are several other features like comparison of your monthly expenses, expenses in each category and exporting your account details to a pdf document that would provide an enhanced experience and application usability for the user.</p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <div class="card-deck">
@@ -170,9 +163,9 @@ if (isset($_POST['login-submit'])) {
 
 </div>
 <!-- Footer -->
-<footer class="footer bg-success pt-4 mt-4">
+<footer class="footer bg-success pt-4 mt-4" style="background-color:#0E2658;">
 
-    <div class="container-fluid text-center text-md-left">
+    <div class="container-fluid text-center text-md-left" >
 
         <div class="row text-white">
             <div class="col-md-6 mt-md-0 mt-3">
@@ -185,21 +178,21 @@ if (isset($_POST['login-submit'])) {
                 <h5 class="text-uppercase"><b>Services</b></h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="newaddexpense.php" class="text-dark">Add Expense</a>
+                        <a href="newaddexpense.php" class="text-light">Add Expense</a>
                     </li>
                     <li>
-                        <a href="setbudget.php" class="text-dark">Set Budget</a>
+                        <a href="setbudget.php" class="text-light">Set Budget</a>
                     </li>
                     <li>
-                        <a href="splitExpense.php" class="text-dark">Split Expense</a>
+                        <a href="splitExpense.php" class="text-light">Split Expense</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href=""> MaryAnn</a>
+    <div class="footer-copyright text-center py-3" style="color:text-white">© 2018 Copyright:
+        <a href="" class="text-light"> BUDGETit</a>
     </div>
 
 </footer>

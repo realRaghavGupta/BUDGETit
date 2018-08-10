@@ -38,6 +38,7 @@ if (isset($_POST['button'])) {
     }
 }
 ?>
+<!--  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,12 +104,12 @@ foreach ($rows as $row) {
                 </tr>
 
             </table>
-            <button type="button" style="font-family: serif; font-size: 1.2em;" id="mybutton" data-toggle="modal"
-                    data-target="#exampleModal" class="btn btn-primary">Change Password
+            <button type="button" style="font-family: serif; font-size: 1.2em; background-color:#0E2658;" id="mybutton" data-toggle="modal"
+                    data-target="#exampleModal" class="btn btn-primary" >Change Password
             </button>
 
 
-            <a style="font-family: serif; font-size: 1.2em;" href="#"> Contact Us</a>
+            <a style="font-family: serif; font-size: 1.2em; color:#0E2658;" href="#"> Contact Us</a>
         </div>
     </div>
 </div>
@@ -117,7 +118,7 @@ foreach ($rows as $row) {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Change Password</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="color:#0E2658;"> Change Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -148,8 +149,8 @@ foreach ($rows as $row) {
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input name="button" type="submit" id="signup" value="Change Password"/>
+                        <button type="button" class="btn btn-primary" style="background-color:#0E2658;" data-dismiss="modal">Close</button>
+                        <input name="button" type="submit" id="signup" class="btn btn-primary" style="background-color:#0E2658;" value="Change Password"/>
                         <!--        <input type="button" class="btn btn-primary"> Change Password</input>-->
                     </div>
                 </form>

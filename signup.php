@@ -55,6 +55,7 @@
                             <!--                            <button type="submit" class="btn btn-primary">SIGNUP</button>-->
                             <!--                            <button type="button" class="btn btn-primary" onClick="location.href = 'index.php';">BACK TO HOME</button>-->
                         </form>
+                        <!--code added by Sandeep Kaur B00786324-->
                         <?php
                         include "includes/database.php";
 
@@ -109,9 +110,9 @@
                                 echo '<script type="text/javascript"> alert("passwords mismatch!")</script>';
                             }
 
-
-                        }
+                            }
                         ?>
+                        <!-- -->
 
                     </div>
                 </div>
